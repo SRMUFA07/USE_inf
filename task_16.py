@@ -156,11 +156,94 @@
 # F(n)  =  n, при n < 11;
 # F(n)  =  n + F(n − 1), если n ≥ 11.
 # Чему равно значение выражения F(2024) − F(2021)?
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n < 11:
+#         return n
+#     if n >= 11:
+#         return n + F(n-1)
+# print(F(2024) - F(2021))
+
+
+# 224)	(Демо-2025) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return (n-1)*F(n-1)
+# print((F(2024) + 2*F(2023)) // F(2022))
+
+
+
+# 213)	(ЕГЭ-2024) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return 2 * n * F(n-1)
+# print((F(2024) - 4 * F(2023)) // F(2022))
+
+
+
+# 214)	(ЕГЭ-2024) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return n * F(n-1)
+# print((2*F(2024)+F(2023)) // F(2022))
+
+
+
+# 215)	(ЕГЭ-2024) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return 3 * n * F(n-1)
+# print((F(2024)//6 + F(2023)) // F(2022))
+
+
+
+# 216)	(ЕГЭ-2024) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return 2 * n * F(n-1)
+# print((F(2024)//16 - F(2023)) // F(2022))
+
+
+
+# 217)	(ЕГЭ-2024) 
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return (n+1)*F(n-1)
+# print((F(2024) - 3*F(2023)) // F(2022))
+
+
+
+# 218)	(ЕГЭ-2024) 
 import sys
 sys.setrecursionlimit(10**5)
 def F(n):
-    if n < 11:
-        return n
-    if n >= 11:
-        return n + F(n-1)
-print(F(2024) - F(2021))
+    if n == 1:
+        return 1
+    if n > 1:
+        return (n+1)*F(n-1)
+print((F(2024) + 3*F(2023)) // F(2022))
