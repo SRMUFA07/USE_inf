@@ -186,51 +186,135 @@
 # print(bin(4**2016 + 2**2015 - 7).count('1'))
 
 
+
 # 341)	(ЕГЭ-2022)
-# import sys
-# sys.setrecursionlimit(10**5)
-# def to_five(e):
-#     d = '01234'
-#     if e < 5:
-#         return d[e]
-#     return to_five(e // 5) + d[e % 5]
 # e = 4 * 625**1920 + 4 * 125**1930 - 4 * 25**1940 - 3 * 5**1950 - 1960
-# print(to_five(e).count('0'))
+# count = 0
+# while e > 0:
+#     if e % 5 == 0:
+#         count += 1
+#     e //= 5
+# print(count)
 
 
 
 # 342)	(ЕГЭ-2022)
-# import sys
-# sys.setrecursionlimit(10**5)
-# def to_25(e):
-#     d = '0123456789abcdefghijklmno'
-#     if e < 25:
-#         return d[e]
-#     return to_25(e // 25) + d[e % 25]
-#
 # e = 13 * 625**1320 + 12 * 125**1230 - 14 * 25**1140 - 13*5**1050 - 2500
-# print(to_25(e).count('0'))
+# count = 0
+# while e > 0:
+#     if e % 25 == 0:
+#         count += 1
+#     e //= 25
+# print(count)
+
 
 
 # 343)	(ЕГЭ-2022)
 # e = 7 * 512**3200 + 6 * 256**3100 - 5 * 64**3000 - 4 * 8**2900 - 1542
-# count_0 = 0
+# count = 0
 # while e > 0:
-#     d = e % 64
-#     if d == 0:
+#     if e % 64 == 0:
 #         count_0 += 1
-#     e = e // 64
-# print(count_0)
+#     e //= 64
+# print(count)
+
 
 
 # 344)	(ЕГЭ-2022)
-import sys
-sys.setrecursionlimit(10**5)
-def to_7(e):
-    d = '0123456'
-    if e < 7:
-        return d[e]
-    return to_7(e // 7) + d[e % 7]
+# e = 343**1515 - 6*49**1520 + 5*49**1510 - 3*7**1530 - 1550
+# count = 0
+# while e > 0:
+#     if e % 7 == 0:
+#         count += 1
+#     e //= 7
+# print(count)
 
-e = 343**1515 - 6*49**1520 + 5*49**1510 - 3*7**1530 - 1550
-print(to_7(e).count('0'))
+
+
+# 486)	(Демо-2025)
+# e = 3 * 3125**8 + 2 * 625**7 - 4 * 625**6 + 3 * 125**5 - 5 * 25**4 - 2025
+# count = 0
+# while e > 0:
+#     if e % 25 == 0:
+#         count += 1
+#     e //= 25
+# print(count)
+
+
+
+# ЕГКР
+# e = 4 * 3125**2019 + 3 * 625**2020 - 2 * 125**2021 + 25**2022 - 4 * 5**2023 - 2024
+# count = 0
+# while e > 0:
+#     if e % 25 > 10:
+#         count += 1
+#     e //= 25
+# print(count)
+
+
+
+# Демо 2024
+# for x in '0123456789abcdefghi':
+#     x1 = int(f'98897{x}21', 19)
+#     x2 = int(f'2{x}923', 19)
+#     if (x1 + x2) % 18 == 0:
+#         print(x, (x1 + x2) // 18)
+
+
+
+# 435)	(ЕГЭ-2023)
+# for x in '0123456789abcdefghi':
+#     x1 = int(f'98{x}79641', 19)
+#     x2 = int(f'36{x}14', 19)
+#     x3 = int(f'73{x}4', 19)
+#     if (x1 + x2 + x3) % 18 == 0:
+#         print(x, (x1 + x2 + x3) // 18)
+
+
+
+# 436)	(ЕГЭ-2023)
+# for x in '0123456789abcdefghijkl':
+#     x1 = int(f'18{x}89957', 22)
+#     x2 = int(f'80{x}33', 22)
+#     x3 = int(f'521{x}6', 22)
+#     if (x1 + x2 + x3) % 21 == 0:
+#         print(x, (x1 + x2 + x3) // 21)
+
+
+
+# 437)	(ЕГЭ-2023)
+# for x in '0123456789abcdefghijklm':
+#     x1 = int(f'7{x}38596', 23)
+#     x2 = int(f'14{x}36', 23)
+#     x3 = int(f'61{x}7', 23)
+#     if (x1 + x2 + x3) % 22 == 0:
+#         print(x, (x1 + x2 + x3) // 22)
+
+
+
+# 487)	(Демо-2025)
+# for x in '0123456789abcdefghi':
+#     x1 = int(f'98897{x}21', 19)
+#     x2 = int(f'2{x}923', 19)
+#     if (x1 + x2) % 18 == 0:
+#         print(x, (x1 + x2) // 18)
+
+
+
+# 485)	(Демо-2025)
+res = []
+for x in range(1, 2031):
+    e = 7**170 + 7**100 - x
+    count = 0
+    while e > 0:
+        if e % 7 == 0:
+            count += 1
+        e //= 7
+    if count == 71:
+        res.append(x)
+print(max(res))
+
+
+
+
+
