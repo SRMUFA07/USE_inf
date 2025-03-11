@@ -1,8 +1,7 @@
 # В1 какой набор букв будет под номером 376?
 # from itertools import *
 # print([i for i in permutations(sorted('модест'))][376])
-
-
+from itertools import count
 
 # В2 под каким номером стоит набор букв подходящий по условию задания?
 # from itertools import *
@@ -83,34 +82,24 @@
 
 
 
-# Определите количество 12-ричных пятизначных чисел, в записи которых ровно однa цифра 7
+# Определите количество 12-ричных пятизначных чисел, в записи которых ровно одна цифра 7
 # и не более трёх цифр с числовым значением, превышающим 8.
-# def convert_to(number, base):
-#     digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-#     if base > len(digits): return None
-#     result = ''
-#     while number > 0:
-#         result = digits[number % base] + result
-#         number //= base
-#     return result
-
-# result = []
-# for num in range(10000, 100000):
-#     num_twelve = convert_to(num, 12)
-#     num_twelve_str = str(num_twelve)
-
-#     more_than_eight = 0
-#     for i in num_twelve_str:
-#         if i not in 'AB':
-#             if int(i) > 8:
-#                 more_than_eight += 1
-#     if num_twelve.count('7') == 1 and more_than_eight <= 3:
-#         result.append(num)
-# print(len(result))
+alph = '0123456789ab'
+count = 0
+for a in alph[1:]: # чтобы не начиналось с 0
+    for b in alph:
+        for c in alph:
+            for d in alph:
+                for e in alph:
+                    num = a+b+c+d+e
+                    more_8 = num.count('9') + num.count('a') + num.count('b')
+                    if num.count('7') == 1 and more_8 <= 3:
+                        count += 1
+print(count)
 
 
 
-# Составляют 5-⁠буквенные слова из букв слова ПЯТНИЦА. Найти количество слов, которые не начинаются с Н и в которых есть только одна буква Я. Буквы в слове могут повторяться.
+# Составляют 5-буквенные слова из букв слова ПЯТНИЦА. Найти количество слов, которые не начинаются с Н и в которых есть только одна буква Я. Буквы в слове могут повторяться.
 # from itertools import*
 # count = 0
 # for i in product('ПЯТНИЦА', repeat=5):
@@ -118,22 +107,51 @@
 #         count += 1
 # print(count)
 
+# count = 0
+# for a in 'ПЯТНИЦА':
+#     for b in 'ПЯТНИЦА':
+#         for c in 'ПЯТНИЦА':
+#             for d in 'ПЯТНИЦА':
+#                 for e in 'ПЯТНИЦА':
+#                     word = a+b+c+d+e
+#                     if word[0] != 'Н' and word.count('Я') == 1:
+#                         count += 1
+# print(count)
 
 
-# Все 5-⁠буквенные слова, составленные из букв А, К, Р, У, записаны в алфавитном порядке. Запишите слово, которое стоит на 150-⁠м месте от начала списка.
+
+# Все 5-буквенные слова, составленные из букв А, К, Р, У, записаны в алфавитном порядке. Запишите слово, которое стоит на 150-м месте от начала списка.
 # from itertools import*
 # print([i for i in product(sorted("АКРУ"), repeat=5)][149])
+#
+# res = []
+# for a in sorted('АКРУ'):
+#     for b in sorted('АКРУ'):
+#         for c in sorted('АКРУ'):
+#             for d in sorted('АКРУ'):
+#                 for e in sorted('АКРУ'):
+#                     word = a+b+c+d+e
+#                     res.append(word)
+# print(res[149])
 
 
 
 # Олег составляет таблицу кодовых слов для передачи сообщений, каждому сообщению соответствует своё кодовое слово. 
-# В качестве кодовых слов Олег использует 4-⁠буквенные слова, в которых есть только буквы A, B, C, D, E, X, Z, причём буквы X и Z встречаются только на двух первых позициях, 
-# а буквы A, B, C, D, E  — только на двух последних. Сколько различных кодовых слов может использовать Олег?
-from itertools import*
-count = 0
-for i in product('ABCDEXZ', repeat=4):
-    if (i[0] in 'XZ' and i[1] in 'XZ') and (i[2] in 'ABCDE' and i[3] in 'ABCDE'):
-        count += 1
-print(count)
-
-    
+# В качестве кодовых слов Олег использует 4-буквенные слова, в которых есть только буквы A, B, C, D, E, X, Z, причём буквы X и Z встречаются только на двух первых позициях,
+# а буквы A, B, C, D, E — только на двух последних. Сколько различных кодовых слов может использовать Олег?
+# from itertools import*
+# count = 0
+# for i in product('ABCDEXZ', repeat=4):
+#     if (i[0] in 'XZ' and i[1] in 'XZ') and (i[2] in 'ABCDE' and i[3] in 'ABCDE'):
+#         count += 1
+# print(count)
+#
+# count = 0
+# for a in 'ABCDEXZ':
+#     for b in 'ABCDEXZ':
+#         for c in 'ABCDEXZ':
+#             for d in 'ABCDEXZ':
+#                 word = a+b+c+d
+#                 if (word[0] in 'XZ' and word[1] in 'XZ') and (word[2] in 'ABCDE' and word[3] in 'ABCDE'):
+#                     count += 1
+# print(count)
