@@ -5,7 +5,7 @@
 #     if n > 2:
 #         return F(n - 1) + 2 * F(n - 2)
 # print(F(5))
-
+from functools import lru_cache
 
 
 # №2
@@ -239,11 +239,36 @@
 
 
 # 218)	(ЕГЭ-2024) 
-import sys
-sys.setrecursionlimit(10**5)
+# import sys
+# sys.setrecursionlimit(10**5)
+
+# from functools import lru_cache
+# @lru_cache(None)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return (n+1)*F(n-1)
+# for n in range(1, 2024): F(n)
+# print((F(2024) + 3*F(2023)) // F(2022))
+
+
+
+# import sys
+# sys.setrecursionlimit(10**5)
+from functools import lru_cache
+
+@lru_cache(None)
 def F(n):
-    if n == 1:
-        return 1
-    if n > 1:
-        return (n+1)*F(n-1)
-print((F(2024) + 3*F(2023)) // F(2022))
+    if n >= 3210: return 1
+    if n < 3210: return F(n + 3) + 7
+
+@lru_cache(None)
+def G(n):
+    if n < 10: return n
+    if n >= 10: return G(n - 3) + 5
+
+for n in range(3210, 15, -1): F(n)
+for n in range(1, 3000): G(n)
+
+print(F(15) - G(3000))
