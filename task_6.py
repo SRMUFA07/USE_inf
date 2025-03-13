@@ -197,24 +197,84 @@
 
 
 
-# Направо 90 Повтори 4 [Вперёд 4sqrt5 Направо 150 Вперёд 4sqrt5  Направо 300]
-from turtle import*
-from math import*
+# Направо 90 Повтори 4 [Вперёд 4sqrt5 Направо 150 Вперёд 4sqrt5 Направо 300]
+# from turtle import*
+# from math import *
+# tracer(0)
+# screensize(2000, 2000)
+# scale = 25
+# left(90)
+#
+# right(90)
+# for i in range(4):
+#     forward(4*sqrt(5)*scale)
+#     right(150)
+#     forward(4*sqrt(5)*scale)
+#     right(300)
+# up()
+#
+# for x in range(-50, 50):
+#     for y in range(-50, 50):
+#         goto(x*scale, y*scale)
+#         dot(4, 'red')
+# done()
+
+
+
+# 77)	(Демо-2023)
+from turtle import *
 tracer(0)
 screensize(2000, 2000)
-scale = 25
+scale = 10
 left(90)
 
+for i in range(2):
+    forward(10*scale)
+    right(90)
+    forward(20*scale)
+    right(90)
+
+up()
+forward(3*scale)
 right(90)
-for i in range(4):
-    forward(4*sqrt(5)*scale)
-    right(150)
-    forward(4*sqrt(5)*scale)
-    right(300)
+forward(5*scale)
+left(90)
+down()
+
+for i in range(2):
+    forward(70*scale)
+    right(90)
+    forward(80*scale)
+    right(90)
 up()
 
-for x in range(-50, 50):
-    for y in range(-50, 50):
+for x in range(100):
+    for y in range(100):
         goto(x*scale, y*scale)
-        dot('red')
+        dot('green')
 done()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

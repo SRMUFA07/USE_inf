@@ -254,21 +254,50 @@ from functools import lru_cache
 
 
 
+# Какой-то там Джобса
 # import sys
 # sys.setrecursionlimit(10**5)
-from functools import lru_cache
+# from functools import lru_cache
+#
+# @lru_cache(None)
+# def F(n):
+#     if n >= 3210: return 1
+#     if n < 3210: return F(n + 3) + 7
+#
+# @lru_cache(None)
+# def G(n):
+#     if n < 10: return n
+#     if n >= 10: return G(n - 3) + 5
+#
+# for n in range(3210, 15, -1): F(n)
+# for n in range(1, 3000): G(n)
+#
+# print(F(15) - G(3000))
 
-@lru_cache(None)
+
+
+# №2247 КЕГЭ
+# def F(n):
+#     if n < 3: return n+1
+#     if n >= 3 and n % 2 == 0: return F(n - 2) + n - 2
+#     if n >= 3 and n % 2 != 0: return F(n + 2) + n + 2
+#
+# count = 0
+# for n in range(1, 10000):
+#     try:
+#         if 10000 <= abs(F(n)) <= 99999: # abs() - модуль
+#             count += 1
+#     except:
+#         pass
+# print(count)
+
+
+
+#
+import sys
+sys.setrecursionlimit(10**5)
 def F(n):
-    if n >= 3210: return 1
-    if n < 3210: return F(n + 3) + 7
+    if n == 1: return 1
+    if n > 1: return n * F(n - 1)
 
-@lru_cache(None)
-def G(n):
-    if n < 10: return n
-    if n >= 10: return G(n - 3) + 5
-
-for n in range(3210, 15, -1): F(n)
-for n in range(1, 3000): G(n)
-
-print(F(15) - G(3000))
+print((F(2024) - F(2023)) // F(2022))

@@ -1,7 +1,8 @@
 # В1 какой набор букв будет под номером 376?
 # from itertools import *
 # print([i for i in permutations(sorted('модест'))][376])
-from itertools import count
+
+
 
 # В2 под каким номером стоит набор букв подходящий по условию задания?
 # from itertools import *
@@ -84,18 +85,18 @@ from itertools import count
 
 # Определите количество 12-ричных пятизначных чисел, в записи которых ровно одна цифра 7
 # и не более трёх цифр с числовым значением, превышающим 8.
-alph = '0123456789ab'
-count = 0
-for a in alph[1:]: # чтобы не начиналось с 0
-    for b in alph:
-        for c in alph:
-            for d in alph:
-                for e in alph:
-                    num = a+b+c+d+e
-                    more_8 = num.count('9') + num.count('a') + num.count('b')
-                    if num.count('7') == 1 and more_8 <= 3:
-                        count += 1
-print(count)
+# alph = '0123456789ab'
+# count = 0
+# for a in alph[1:]: # чтобы не начиналось с 0
+#     for b in alph:
+#         for c in alph:
+#             for d in alph:
+#                 for e in alph:
+#                     num = a+b+c+d+e
+#                     more_8 = num.count('9') + num.count('a') + num.count('b')
+#                     if num.count('7') == 1 and more_8 <= 3:
+#                         count += 1
+# print(count)
 
 
 
@@ -155,3 +156,18 @@ print(count)
 #                 if (word[0] in 'XZ' and word[1] in 'XZ') and (word[2] in 'ABCDE' and word[3] in 'ABCDE'):
 #                     count += 1
 # print(count)
+
+
+
+words = []
+for a in sorted('ПАРУС'):
+    for b in sorted('ПАРУС'):
+        for c in sorted('ПАРУС'):
+            for d in sorted('ПАРУС'):
+                for e in sorted('ПАРУС'):
+                    word = a + b + c + d + e
+                    words.append(word)
+
+for word in words:
+    if word.count('У') <= 1 and 'АА' not in word:
+        print(words.index(word) + 1)

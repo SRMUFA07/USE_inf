@@ -308,13 +308,30 @@
 
 
 # 568)	(ЕГЭ-2024) 
+# def f(x, A):
+#     return (x % 33 == 0) <= ((x % A != 0) <= (x % 242 != 0))
+#
+# res = []
+# for A in range(1, 900):
+#     flag = True
+#     for x in range(1, 900):
+#         if not f(x, A):
+#             flag = False
+#             break
+#     if flag:
+#         res.append(A)
+# print(max(res))
+
+
+
+#
 def f(x, A):
-    return (x % 33 == 0) <= ((x % A != 0) <= (x % 242 != 0))
+    return (x % A != 0) <= ((x % 14 == 0) <= (x % 4 != 0))
 
 res = []
-for A in range(1, 900):
+for A in range(1, 500):
     flag = True
-    for x in range(1, 900):
+    for x in range(1, 500):
         if not f(x, A):
             flag = False
             break

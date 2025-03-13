@@ -62,11 +62,21 @@
 
 
 # 229)	(Демо-2025)  Сеть задана IP-адресом 172.16.168.0 и маской сети 255.255.248.0. Сколько в этой сети IP-адресов, для которых количество единиц в двоичной записи IP-адреса не кратно 5? 
+# from ipaddress import *
+# net = ip_network('172.16.168.0/255.255.248.0', 0)
+# res = 0
+# for ip in net:
+#     ip_bin = f'{ip:b}'
+#     if ip_bin.count('1') % 5 != 0:
+#         res += 1
+# print(res)
+
+
 from ipaddress import *
-net = ip_network('172.16.168.0/255.255.248.0', 0)
-res = 0 
+net = ip_network('122.159.136.144/255.255.255.248', 0)
+count = 0
 for ip in net:
-    ip_bin = f'{ip:b}'
-    if ip_bin.count('1') % 5 != 0:
-        res += 1
-print(res)
+    ip_bin = bin(int(ip))[2:]
+    if ip_bin.count('1') % 4 != 0:
+        count += 1
+print(count)

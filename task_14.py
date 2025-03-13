@@ -302,19 +302,28 @@
 
 
 # 485)	(Демо-2025)
-res = []
-for x in range(1, 2031):
-    e = 7**170 + 7**100 - x
-    count = 0
-    while e > 0:
-        if e % 7 == 0:
-            count += 1
-        e //= 7
-    if count == 71:
-        res.append(x)
-print(max(res))
+# res = []
+# for x in range(1, 2031):
+#     e = 7**170 + 7**100 - x
+#     count = 0
+#     while e > 0:
+#         if e % 7 == 0:
+#             count += 1
+#         e //= 7
+#     if count == 71:
+#         res.append(x)
+# print(max(res))
 
 
+
+#
+e = 2 * 729**2014 + 2 * 243**2016 - 2 * 81**2018 + 2 * 27**2020 - 2 * 9**2022 - 2024
+count = 0
+while e > 0:
+    if e % 27 > 9:
+        count += 1
+    e //= 27
+print(count)
 
 
 

@@ -386,10 +386,21 @@
 
 
 # 2024_5
-num = '9' * 81
-while '33333' in num or '999' in num:
-    if '33333' in num:
-        num = num.replace('33333', '99', 1)
+# num = '9' * 81
+# while '33333' in num or '999' in num:
+#     if '33333' in num:
+#         num = num.replace('33333', '99', 1)
+#     else:
+#         num = num.replace('999', '3', 1)
+# print(num)
+
+
+
+#
+n = 82 * '8'
+while '1111' in n or '8888' in n:
+    if '1111' in n:
+        n = n.replace('1111', '8', 1)
     else:
-        num = num.replace('999', '3', 1)
-print(num)
+        n = n.replace('8888', '11', 1)
+print(n)
