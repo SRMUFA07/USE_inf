@@ -277,17 +277,54 @@
 
 
 # №16328 КЕГЭ
-file_array = [int(x) for x in open('task_17/17_16328.txt')]
-res = []
+# file_array = [int(x) for x in open('task_17/17_16328.txt')]
+# res = []
+#
+# min_19 = 0
+# for i in sorted(file_array):
+#     if i % 19 == 0:
+#         min_19 = i
+#         break
+#
+# for i in range(len(file_array) - 1):
+#     if file_array[i] % min_19 == 0 or file_array[i + 1] % min_19 == 0:
+#         res.append(file_array[i] + file_array[i + 1])
+#
+# print(len(res), max(res))
 
-min_19 = 0
-for i in sorted(file_array):
-    if i % 19 == 0:
-        min_19 = i
-        break
 
-for i in range(len(file_array) - 1):
-    if file_array[i] % min_19 == 0 or file_array[i + 1] % min_19 == 0:
-        res.append(file_array[i] + file_array[i + 1])
+# 17636 КЕГЭ
+# file = [int(x) for x in open('task_17/17_17636.txt')]
+# res = []
+#
+# max_3 = max(x for x in file if str(x)[-1] == '3' and x in range(100, 1000))
+#
+# for i in range(len(file) - 2):
+#     if str(file[i])[-1] == '3' and abs(file[i]) in range(100, 1000) or \
+#         str(file[i + 1])[-1] == '3' and abs(file[i + 1]) in range(100, 1000) or \
+#         str(file[i + 2])[-1] == '3' and abs(file[i + 2]) in range(100, 1000):
+#         if (file[i] + file[i+1] + file[i+2]) < max_3:
+#             res.append(file[i] + file[i+1] + file[i+2])
+# print(len(res), max(res))
 
-print(len(res), max(res))
+
+
+# 14653 КЕГЭ
+# file = [int(x) for x in open('task_17/17.16_14653.txt')]
+# res = []
+#
+# file_usl = [x for x in file if x % 17 == 0 and x > 0]
+# min_1 = sorted(file_usl)[0]
+# min_2 = sorted(file_usl)[1]
+#
+# max69 = max([x for x in file if abs(x) % 100 == 69])
+#
+# for i in range(len(file) - 3):
+#     if (abs(file[i]) in range(100, 1000)) + (abs(file[i+1]) in range(100, 1000)) + \
+#         (abs(file[i+2]) in range(100, 1000)) + (abs(file[i+3]) in range(100, 1000)) == 2:
+#         if (file[i] % 18 == 0) + (file[i+1] % 18 == 0) + \
+#             (file[i+2] % 18 == 0) + (file[i+3] % 18 == 0) == 1:
+#             if (file[i] + file[i+1] + file[i+2] + file[i+3]) % (min_1 + min_2) == 0:
+#                 if (file[i] * file[i+1] * file[i+2] * file[i+3]) <= max69**2:
+#                     res.append((file[i] + file[i+1] + file[i+2] + file[i+3])**2)
+# print(len(res), min(res))

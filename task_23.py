@@ -315,11 +315,61 @@
 # A. Вычесть 2
 # B. Найти целую часть от деления на 2
 # Сколько существует программ, для которых при исходном числе 32 результатом является число 1, при этом траектория вычислений содержит число 8?
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x < y:
+#         return 0
+#     if x > y:
+#         return F(x-2, y) + F(x//2, y)
+# print(F(32, 8) * F(8, 1))
+
+
+
+# КЕГЭ
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x < y or x == 24:
+#         return 0
+#     if x > y:
+#         return F(x-1, y) + F(x-6, y) + F(x//2, y)
+# print(F(34, 29) * F(29, 19) * F(19, 6))
+
+
+
+# КЕГЭ 16332
 def F(x, y):
     if x == y:
-        return 1
-    if x < y:
-        return 0
+        return  1
     if x > y:
-        return F(x-2, y) + F(x//2, y)
-print(F(32, 8) * F(8, 1))
+        return 0
+    if x < y:
+        return F(x+1, y) + F(x+2, y) + F(x*2, y)
+print(F(4, 11) * F(11, 13) * F(13, 15))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

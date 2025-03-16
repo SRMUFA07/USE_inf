@@ -122,12 +122,41 @@
 
 
 # 139)	(ЕГЭ-2024) 
+# def f(a, b, m):
+#     if a + b >= 227: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(a+1, b, m-1), f(a*2, b, m-1), f(a, b+1, m-1), f(a, b*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h) # any в 19 ответ 53
+#
+# print('19', [s for s in range(1, 210) if f(17, s, 2)])
+# print('20', [s for s in range(1, 210) if not f(17, s, 1) and f(17, s, 3)])
+# print('21', [s for s in range(1, 210) if not f(17, s, 2) and f(17, s, 4)])
+
+
+
+# КЕГЭ 16330
 def f(a, b, m):
-    if a + b >= 227: return m % 2 == 0
+    if a+b >= 59: return m % 2 == 0
     if m == 0: return 0
     h = [f(a+1, b, m-1), f(a*2, b, m-1), f(a, b+1, m-1), f(a, b*2, m-1)]
-    return any(h) if m % 2 != 0 else all(h) # any в 19 ответ 53
+    return any(h) if m % 2 != 0 else any(h) #all для 20 и 21
 
-print('19', [s for s in range(1, 210) if f(17, s, 2)])
-print('20', [s for s in range(1, 210) if not f(17, s, 1) and f(17, s, 3)])
-print('21', [s for s in range(1, 210) if not f(17, s, 2) and f(17, s, 4)])
+print('19)', [s for s in range(1, 60) if f(5, s, 2)])
+print('20)', [s for s in range(1, 60) if not f(5, s, 1) and f(5, s, 3)])
+print('21)', [s for s in range(1, 60) if not f(5, s, 2) and f(5, s, 4)])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

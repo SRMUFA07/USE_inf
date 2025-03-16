@@ -72,11 +72,26 @@
 # print(res)
 
 
-from ipaddress import *
-net = ip_network('122.159.136.144/255.255.255.248', 0)
-count = 0
-for ip in net:
-    ip_bin = bin(int(ip))[2:]
-    if ip_bin.count('1') % 4 != 0:
-        count += 1
-print(count)
+
+# from ipaddress import *
+# net = ip_network('122.159.136.144/255.255.255.248', 0)
+# count = 0
+# for ip in net:
+#     ip_bin = bin(int(ip))[2:]
+#     if ip_bin.count('1') % 4 != 0:
+#         count += 1
+# print(count)
+
+
+
+# наибольший ip
+# from ipaddress import *
+# net = ip_network('218.194.82.148/255.255.255.192', 0)
+# print(net[-2]) всегда предпоследний, т.к. последний служебный
+
+
+
+# наименьший ip
+# from ipaddress import *
+# net = ip_network('158.214.121.40/255.255.255.224', 0)
+# print(net[1]) всегда второй, т.к. первый служебный
