@@ -94,5 +94,13 @@
 # наименьший ip
 from ipaddress import *
 net = ip_network('158.214.121.40/255.255.255.224', 0)
-for ip in net.hosts():
-    print(ip) # можно сделать так, тут сразу пропускаются служебные
+# for ip in net.hosts():
+#     print(ip) # можно сделать так, тут сразу пропускаются служебные
+print(str(net[1]))
+
+
+
+# из пробника
+# from ipaddress import *
+# net = ip_network('35.131.56.108/255.192.0.0', 0)
+# print(str(net[-2]))

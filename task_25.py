@@ -111,19 +111,51 @@
 
 
 # №5226
+# from fnmatch import fnmatch
+#
+# def f(x):
+#     divs = set()
+#     for d in range(1, int(x**0.5) + 1):
+#         if x % d == 0:
+#             divs.add(d)
+#             divs.add(x//d)
+#     return sorted(divs)
+#
+# for koren_iz_x in range(int((10**9 + 1)**0.5), int((10**10)**0.5)): # прохожу только ко корням
+#     x = koren_iz_x**2
+#     divs = f(x)
+#     if fnmatch(str(x), '1*2*7*04'):
+#         if len(divs) == 45: # 45 делителей, если у числа неполное количество делителей, то число является полным квадратом, то есть из него извлекается квадратный корень
+#             print(x, divs[-2])
+
+
+
+# 9846
+# from fnmatch import fnmatch
+# for x in range(2025, 10**8, 2025):
+#     if fnmatch(str(x), '12*34?5'):
+#         print(x, x//2025)
+
+
+
+# 9792
+# from fnmatch import fnmatch
+# for x in range(1923, 10**8, 1923):
+#     if fnmatch(str(x), '1*2??76'):
+#         print(x, x//1923)
+
+
+
+# 9754
+# from fnmatch import fnmatch
+# for x in range(2023, 10**8, 2023):
+#     if fnmatch(str(x), '3?1*57'):
+#         print(x, x//2023)
+
+
+
+# из пробника
 from fnmatch import fnmatch
-
-def f(x):
-    divs = set()
-    for d in range(1, int(x**0.5) + 1):
-        if x % d == 0:
-            divs.add(d)
-            divs.add(x//d)
-    return sorted(divs)
-
-for koren_iz_x in range(int((10**9 + 1)**0.5), int((10**10)**0.5)): # прохожу только ко корням
-    x = koren_iz_x**2
-    divs = f(x)
-    if fnmatch(str(x), '1*2*7*04'):
-        if len(divs) == 45: # 45 делителей, если у числа неполное количество делителей, то число является полным квадратом, то есть из него извлекается квадратный корень
-            print(x, divs[-2])
+for x in range(2031, 10**10, 2031):
+    if fnmatch(str(x), '21?478*7'):
+        print(x, x//2031)
