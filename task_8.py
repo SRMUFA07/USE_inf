@@ -6,7 +6,7 @@
 
 # В2 под каким номером стоит набор букв подходящий по условию задания?
 # from itertools import *
-# for i, w in enumerate(product(sorted('компьютер'), repeat=5), 1): # еденица нужна чтобы список шел с одного, как в задании
+# for i, w in enumerate(product(sorted('компьютер'), repeat=5), 1): # единица нужна чтобы список шел с одного, как в задании
 #     if i % 2 != 0 and w[0] != 'ь' and w.count('к') == 2:
 #         print(i)
 
@@ -54,7 +54,7 @@
 # from itertools import *
 # k = 0
 # for w in permutations('пайщик'):
-#     word = ''.join(w) # объеденил сторку чтобы проверить по условию задания
+#     word = ''.join(w) # объединил строку чтобы проверить по условию задания
 #     if w[0] != 'й' and 'иа' not in word:
 #         k += 1
 # print(k)

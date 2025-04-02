@@ -92,11 +92,11 @@
 
 
 # наименьший ip
-from ipaddress import *
-net = ip_network('158.214.121.40/255.255.255.224', 0)
-# for ip in net.hosts():
-#     print(ip) # можно сделать так, тут сразу пропускаются служебные
-print(str(net[1]))
+# from ipaddress import *
+# net = ip_network('158.214.121.40/255.255.255.224', 0)
+# # for ip in net.hosts():
+# #     print(ip) # можно сделать так, тут сразу пропускаются служебные
+# print(str(net[1]))
 
 
 
@@ -104,3 +104,50 @@ print(str(net[1]))
 # from ipaddress import *
 # net = ip_network('35.131.56.108/255.192.0.0', 0)
 # print(str(net[-2]))
+
+
+
+# 14648 составляем все возможные маски
+# from ipaddress import ip_network
+#
+# for m in range(0, 33): # количество единиц в маске
+#     net = ip_network(f'218.48.192.56/{m}', 0)
+#     if str(net.network_address) == '218.48.192.0': # сверяю с адресом сети из условия
+#         if len(list(net.hosts())) >= 500: # сверяю количество узлов
+#             print(net.netmask) # вывожу все маски и смотрю все возможные третьи слева байты
+
+
+
+# 14359
+# from ipaddress import ip_network
+#
+# for m in range(0, 33):
+#     net1 = ip_network(f'157.127.172.56/{m}', 0)
+#     net2 = ip_network(f'157.127.191.78/{m}', 0)
+#     if str(net1.network_address) != str(net2.network_address):
+#         print(m)
+#         break
+
+
+
+# 14649
+# from ipaddress import ip_network
+#
+# for A in range(1, 256):
+#     net = ip_network(f'116.242.{A}.26/255.255.255.224', 0)
+#     usl = [bin(int(ip))[2:].zfill(32)[:16].count('1') >= bin(int(ip))[2:].zfill(32)[16:].count('1') for ip in net]
+#     if all(usl):
+#         print(A)
+
+
+
+# 14650
+from ipaddress import ip_network
+
+for m in range(0, 33):
+    net1 = ip_network(f'216.54.187.235/{m}', 0)
+    net2 = ip_network(f'216.54.174.128/{m}', 0)
+    if str(net1.network_address) != str(net2.network_address):
+        if '216.54.187.235' != str(net1.network_address) and '216.54.187.235' != str(net1.broadcast_address):
+            if '216.54.174.128' != str(net2.network_address) and '216.54.174.128' != str(net2.broadcast_address):
+                print(m)
