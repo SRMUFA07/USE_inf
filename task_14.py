@@ -5,8 +5,7 @@
 #         return digits[num]
 #     return seven(num // 7) + digits[num % 7]
 # print(seven(6 * 343**5 + 5 * 49**7 - 50).count('6'))
-
-
+from itertools import count
 
 # №2
 # def three(num):
@@ -317,13 +316,95 @@
 
 
 #
-e = 2 * 729**2014 + 2 * 243**2016 - 2 * 81**2018 + 2 * 27**2020 - 2 * 9**2022 - 2024
-count = 0
-while e > 0:
-    if e % 27 > 9:
-        count += 1
-    e //= 27
-print(count)
+# e = 2 * 729**2014 + 2 * 243**2016 - 2 * 81**2018 + 2 * 27**2020 - 2 * 9**2022 - 2024
+# count = 0
+# while e > 0:
+#     if e % 27 > 9:
+#         count += 1
+#     e //= 27
+# print(count)
 
 
 
+
+# № 21413 Досрочная волна 2025
+# for x in '0123456789abcdefghijk':
+#     e = int(f'82934{x}2', 21) + int(f'2924{x}{x}7', 21) + int(f'67564{x}8', 21)
+#     if e % 20 == 0:
+#         print(e//20)
+#         break
+
+
+
+
+# № 20904 Апробация 05.03.25
+# res = []
+# for x in range(1, 2031):
+#     e = 3**100 - x
+#     count = 0
+#     while e > 0:
+#         if e % 3 == 0:
+#             count += 1
+#         e //= 3
+#     if count == 1:
+#         res.append(x)
+# print(max(res))
+
+
+
+# № 19246 ЕГКР 21.12.24
+# for x in '0123456789abcdefghijklmno':
+#     e = int(f'11353{x}12', 25) + int(f'135{x}21', 25)
+#     if e % 24 == 0:
+#         print(e // 24)
+
+
+
+# № 17633 Основная волна 19.06.24
+# res = []
+# for x in range(1, 2031):
+#     e = 6**260 + 6**160 + 6**60 - x
+#     count = 0
+#     while e > 0:
+#         if e % 6 == 0:
+#             count += 1
+#         e //= 6
+#     if count == 202:
+#         res.append(x)
+# print(min(res))
+
+
+
+
+# № 17555 Основная волна 08.06.24
+# res = []
+# for x in range(1, 2031):
+#     e = 7**91 + 7**160 - x
+#     count = 0
+#     while e > 0:
+#         if e % 7 == 0:
+#             count += 1
+#         e //= 7
+#     if count == 70:
+#         res.append(x)
+# print(max(res))
+
+
+
+
+# № 16380 ЕГКР 27.04.24
+# e = 4 * 3125**2019 + 3 * 625**2020 - 2 * 125**2021 + 25**2022 - 4 * 5**2023 - 2024
+# count = 0
+# while e > 0:
+#     if e % 25 > 10:
+#         count +=1
+#     e //= 25
+# print(count)
+
+
+
+# № 15328 Досрочная волна 2024
+for x in '0123456789abcdefghijklmnopq':
+    e = int(f'123{x}24', 27) + int(f'135{x}78', 27)
+    if e % 26 == 0:
+        print(e // 26)
