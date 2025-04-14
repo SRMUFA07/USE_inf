@@ -351,22 +351,26 @@
 
 
 # из пробника
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x < y or x == 26:
+#         return 0
+#     if x > y:
+#         return F(x-1, y) + F(x-6, y) + F(x//2, y)
+# print(F(31, 24) * F(23, 4))
+
+
+
+# 21420 Досрочная волна 2024
 def F(x, y):
     if x == y:
         return 1
-    if x < y or x == 26:
+    if x > y or x == 35:
         return 0
-    if x > y:
-        return F(x-1, y) + F(x-6, y) + F(x//2, y)
-print(F(31, 24) * F(23, 4))
-
-
-
-
-
-
-
-
+    if x < y:
+        return F(x+1, y) + F(x+2, y) + F(x*2, y)
+print(F(7, 13) * F(13, 15) * F(15, 51))
 
 
 

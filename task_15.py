@@ -7,6 +7,7 @@
 #     if not f(x, A):
 #         A.add(x)
 # print(len(A) - 1)
+from sys import flags
 
 # В2 ДЕЛ()
 # def f(x, A):
@@ -389,34 +390,62 @@
 
 
 # № 9370
-P = list(range(5, 55))
-Q = list(range(50, 94))
-
-def f(x, P, Q, A):
-    return (x not in P) and (x in Q) and (x <= A)
-
-for A in range(1, 500):
-    count = 0
-    for x in range(1, 500):
-        if f(x, P, Q, A):
-            count += 1
-    if count == 20:
-        print(A)
-        break
-
-
+# P = list(range(5, 55))
+# Q = list(range(50, 94))
+#
+# def f(x, P, Q, A):
+#     return (x not in P) and (x in Q) and (x <= A)
+#
+# for A in range(1, 500):
+#     count = 0
+#     for x in range(1, 500):
+#         if f(x, P, Q, A):
+#             count += 1
+#     if count == 20:
+#         print(A)
+#         break
 
 
 
+# № 16833
+# P = list(range(25, 74))
+# Q = list(range(75, 119))
+#
+# def f(x, P, Q, A):
+#     return ((x in A) and (x not in Q)) <= ((x in P) or (x in Q))
+#
+# res = []
+# for A_start in range(1, 100):
+#     for A_end in range(A_start+1, 200):
+#         flag = True
+#         A = list(range(A_start, A_end))
+#         for x in range(1, 500):
+#             if not f(x, P, Q, A):
+#                 flag = False
+#                 break
+#         if flag:
+#             res.append(len(A)-1)
+# print(max(res))
 
 
 
+# № 15330
+B = list(range(24, 91))
+C = list(range(47, 116))
 
+def f(x, B, C, A):
+    return (x in C) <= (((x not in A) and (x in B)) <= (x not in C))
 
-
-
-
-
-
-
+res = []
+for A_s in range(1, 200):
+    for A_e in range(A_s+1, 300):
+        flag = True
+        A = list(range(A_s, A_e))
+        for x in range(1, 500):
+            if not f(x, B, C, A):
+                flag = False
+                break
+        if flag:
+            res.append(len(A)-1)
+print(min(res))
 
