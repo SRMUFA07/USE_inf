@@ -1,25 +1,3 @@
-# В1
-# def duo(n):
-#     digits = '0123456789AB'
-#     if n < 12:
-#         return digits[n]
-#     return duo(n//12) + digits[n % 12]
-from itertools import count
-
-
-# res = []
-# for n in range(144, 10000):
-#     s = duo(n)
-#     if n % 12 == 0:
-#         s += s[-3:]
-#     else:
-#         s = duo(n % 12 * 3) + s   
-#     if int(s, 12) < 58000:
-#         res.append((int(s, 12), n))
-#     print(sorted(res, reverse = True)[0])
-
-
-
 # ЦУ
 # def find_min(target_result):
 #     for num in range(10000, 100000):
@@ -182,27 +160,63 @@ from itertools import count
 # Перевод в систему счисления
 # Делим исходное число на основание искомого числа и записываем остаток до тех пор,
 # пока неполное частное не будет равно нулю. Полученные остатки записываем в обратном порядке.
-def s(n):
-    d = '012'
-    if n < 3: return d[n]
-    if n >= 3: return s(n // 3) + d[n % 3]
-print(s(111))
+# def s(n):
+#     d = '012'
+#     if n < 3: return d[n]
+#     if n >= 3: return s(n // 3) + d[n % 3]
+# print(s(111))
+#
+# # другой способ
+# def f(n):
+#     res = ''
+#     while n > 0:
+#         res += str(n % 3)
+#         n //= 3
+#     return res[::-1]
+# print(f(111))
 
-# другой способ
-def f(n):
+
+
+# № 20182
+# def f(N):
+#     res = ''
+#     while N > 0:
+#         res += str(N % 3)
+#         N //= 3
+#     return res[::-1]
+#
+# def d_sum(N3):
+#     res = 0
+#     for d in N3:
+#         res += int(d)
+#     return res
+#
+# for N in range(1, 200):
+#     N3 = f(N)
+#     if d_sum(N3) % 2 == 0:
+#         N3 = '12' + N3[2:] + '0'
+#     if d_sum(N3) % 2 != 0:
+#         N3 = '10' + N3[2:] + '2'
+#
+#     R = int(N3, 3)
+#     if R > 105:
+#         print(N)
+#         break
+
+
+
+# № 561
+def f(N):
     res = ''
-    while n > 0:
-        res += str(n % 3)
-        n //= 3
+    while N > 0:
+        res += str(N % 3)
+        N //= 3
     return res[::-1]
-print(f(111))
 
-
-# счетчик каких-то цифр в какой-то системе счисления
-count = 0
-n = 111
-while n > 0:
-    if n % 3 == 0:
-        count += 1
-    n //= 3
-print('нулей:', count)
+for N in range(1, 1000):
+    N3 = f(N)
+    N3 = N3 + str(N % 3)
+    R = int(N3, 3)
+    if R >= 100:
+        print(R)
+        break

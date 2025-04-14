@@ -408,3 +408,15 @@ for x in '0123456789abcdefghijklmnopq':
     e = int(f'123{x}24', 27) + int(f'135{x}78', 27)
     if e % 26 == 0:
         print(e // 26)
+
+
+
+# счетчик каких-то цифр в какой-то системе счисления
+count = 0
+n = 111
+while n > 0:
+    if n % 3 == 0:
+        count += 1
+    n //= 3
+print('нулей:', count)
+
