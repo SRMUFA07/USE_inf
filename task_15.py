@@ -2,13 +2,11 @@
 # A = set()
 # def f(x, A):
 #     return ((x in A) <= (x**2 <= 81)) and ((x**2 <= 36) <= (x in A))
-
-# for x in range(-1000,1000):
-#     if not f(x,A):
+#
+# for x in range(-1000, 1000):
+#     if not f(x, A):
 #         A.add(x)
 # print(len(A) - 1)
-
-
 
 # В2 ДЕЛ()
 # def f(x, A):
@@ -96,15 +94,20 @@
 # №6 Для какого наибольшего целого неотрицательного числа A выражение
 # (x > A) ∨ (y > x) ∨ (2y + x < 110)
 # тождественно истинно, то есть принимает значение 1 при любых целых неотрицательных x и y?
-# for A in range(300, -1, -1):
-#     k = 0 
+# def f(x, y, A):
+#     return (x > A) or (y > x) or (2 * y + x < 110)
+#
+# res = []
+# for A in range(1, 300):
+#     flag = True
 #     for x in range(300):
 #         for y in range(300):
-#             if (x > A) or (y > x) or (2 * y + x < 110):
-#                 k += 1
-#     if k == 300**2:
-#         print(A)
-#         break
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         res.append(A)
+# print(max(res))
 
 
 
@@ -113,9 +116,9 @@
 # тождественно истинна при любом вещественном x. Какую наибольшую длину может иметь отрезок A?
 # def f(x, A):
 #     return ((x in A) <= (x**2 <= 100)) and ((x**2 <= 64) <= (x in A))
-
-# A = set([i for i in range(-300, 300)])
-# for x in range(-300, 300):
+#
+# A = list(range(-500, 500))
+# for x in range(-500, 500):
 #     if not f(x, A):
 #         A.remove(x)
 # print(len(A) - 1)
@@ -125,21 +128,17 @@
 # №8 На числовой прямой даны два отрезка: P=[3, 13] и Q=[12, 22]. Какова наибольшая возможная длина интервала A, что формула
 # ((х ∈ A) → (х ∈ Р)) ∨ (х ∈ Q)
 # тождественно истинна, то есть принимает значение 1 при любом значении переменной х.
-# m = 0
-# P = [i for i in range(3, 13)]
-# Q = [i for i in range(12, 22)]
-# for Amin in range(1, 101):
-#     for Amax in range(Amin + 1, 101):
-#         check = 1
-#         A = [i for i in range(Amin, Amax)]
-#         for x in range(1, 101):
-#             f = ((x in A) <= (x in P)) or (x in Q)
-#             if not f:
-#                 check = 0
-#                 break
-#         if check == 1:
-#             m = max(m, Amax - Amin)
-# print(m)
+# P = list(range(3, 13))
+# Q = list(range(12, 22))
+# A = list(range(1, 300))
+#
+# def f(x, P, Q, A):
+#     return ((x in A) <= (x in P)) or (x in Q)
+#
+# for x in range(1, 300):
+#     if not(f(x, P, Q, A)):
+#         A.remove(x)
+# print(len(A))
 
 
 
@@ -249,6 +248,7 @@
 # P = list(range(15, 41))
 # Q = list(range(21, 64))
 # A = []
+#
 # for x in range(1, 300):
 #     if ((x in P) <= (((x in Q) and (x not in A)) <= (x not in P))) == False:
 #         A.append(x)
@@ -325,16 +325,98 @@
 
 
 #
-def f(x, A):
-    return (x % A != 0) <= ((x % 14 == 0) <= (x % 4 != 0))
+# def f(x, A):
+#     return (x % A != 0) <= ((x % 14 == 0) <= (x % 4 != 0))
+#
+# res = []
+# for A in range(1, 500):
+#     flag = True
+#     for x in range(1, 500):
+#         if not f(x, A):
+#             flag = False
+#             break
+#     if flag:
+#         res.append(A)
+# print(max(res))
 
-res = []
+
+
+# № 21414 Досрочная волна 2025
+# def f(x, y, A):
+#     return (5 < y) or (x > 32) or (x + 2*y < A)
+#
+# for A in range(1, 500):
+#     flag = True
+#     for x in range(1, 500):
+#         for y in range(1, 500):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(A)
+#         break
+
+
+
+# № 20905 Апробация 05.03.25
+# def f(x, P, Q, A):
+#     return (x in P) <= (((x in Q) and (x not in A)) <= (x not in P))
+#
+# P = list(range(17, 58))
+# Q = list(range(29, 80))
+# A = list()
+#
+# for x in range(1, 500):
+#     if not f(x, P, Q, A):
+#         A.append(x)
+# print(min(A))
+
+
+
+# № 14659
+# def f(x, P, Q, A):
+#     return ((x in A) <= (x in P)) or (x in Q)
+#
+# P = list(range(6, 17))
+# Q = list(range(13, 28))
+# A = list(range(1, 500))
+#
+# for x in range(1, 500):
+#     if not f(x, P, Q, A):
+#         A.remove(x)
+# print(len(A))
+
+
+
+# № 9370
+P = list(range(5, 55))
+Q = list(range(50, 94))
+
+def f(x, P, Q, A):
+    return (x not in P) and (x in Q) and (x <= A)
+
 for A in range(1, 500):
-    flag = True
+    count = 0
     for x in range(1, 500):
-        if not f(x, A):
-            flag = False
-            break
-    if flag:
-        res.append(A)
-print(max(res))
+        if f(x, P, Q, A):
+            count += 1
+    if count == 20:
+        print(A)
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

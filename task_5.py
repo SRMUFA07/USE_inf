@@ -4,7 +4,9 @@
 #     if n < 12:
 #         return digits[n]
 #     return duo(n//12) + digits[n % 12]
-    
+from itertools import count
+
+
 # res = []
 # for n in range(144, 10000):
 #     s = duo(n)
@@ -183,6 +185,24 @@
 def s(n):
     d = '012'
     if n < 3: return d[n]
-    return s(n//3) + d[n%3]
+    if n >= 3: return s(n // 3) + d[n % 3]
+print(s(111))
 
-print(s(15))
+# другой способ
+def f(n):
+    res = ''
+    while n > 0:
+        res += str(n % 3)
+        n //= 3
+    return res[::-1]
+print(f(111))
+
+
+# счетчик каких-то цифр в какой-то системе счисления
+count = 0
+n = 111
+while n > 0:
+    if n % 3 == 0:
+        count += 1
+    n //= 3
+print('нулей:', count)
