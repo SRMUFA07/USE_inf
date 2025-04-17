@@ -294,10 +294,22 @@ from functools import lru_cache
 
 
 #
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n == 1: return 1
+#     if n > 1: return n * F(n - 1)
+#
+# print((F(2024) - F(2023)) // F(2022))
+
+
+
+# 21415
 import sys
 sys.setrecursionlimit(10**5)
 def F(n):
-    if n == 1: return 1
-    if n > 1: return n * F(n - 1)
-
-print((F(2024) - F(2023)) // F(2022))
+    if n <= 5:
+        return 1
+    if n > 5:
+        return n + F(n-2)
+print(F(2126) - F(2122))

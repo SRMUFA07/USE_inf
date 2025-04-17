@@ -397,10 +397,36 @@
 
 
 #
-n = 82 * '8'
-while '1111' in n or '8888' in n:
-    if '1111' in n:
-        n = n.replace('1111', '8', 1)
-    else:
-        n = n.replace('8888', '11', 1)
-print(n)
+# n = 82 * '8'
+# while '1111' in n or '8888' in n:
+#     if '1111' in n:
+#         n = n.replace('1111', '8', 1)
+#     else:
+#         n = n.replace('8888', '11', 1)
+# print(n)
+
+
+
+# 21411
+def sum_d(num):
+    res = 0
+    for d in num:
+        res += d
+    return res
+
+for n in range(4, 10000):
+    num = '3' + '1' * n
+    while '31' in num or '211' in num or '1111' in num:
+        if '31' in num:
+            num = num.replace('31', '1', 1)
+        if '211' in num:
+            num = num.replace('211', '13', 1)
+        if '1111' in num:
+            num = num.replace('1111', '2', 1)
+
+    sum_d = 0
+    for d in num:
+        sum_d += int(d)
+    if sum_d == 15:
+        print(n)
+        break

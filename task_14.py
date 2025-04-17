@@ -404,19 +404,27 @@ from itertools import count
 
 
 # № 15328 Досрочная волна 2024
-for x in '0123456789abcdefghijklmnopq':
-    e = int(f'123{x}24', 27) + int(f'135{x}78', 27)
-    if e % 26 == 0:
-        print(e // 26)
+# for x in '0123456789abcdefghijklmnopq':
+#     e = int(f'123{x}24', 27) + int(f'135{x}78', 27)
+#     if e % 26 == 0:
+#         print(e // 26)
 
 
 
 # счетчик каких-то цифр в какой-то системе счисления
-count = 0
-n = 111
-while n > 0:
-    if n % 3 == 0:
-        count += 1
-    n //= 3
-print('нулей:', count)
+# count = 0
+# n = 111
+# while n > 0:
+#     if n % 3 == 0:
+#         count += 1
+#     n //= 3
+# print('нулей:', count)
 
+
+
+# 21413
+for x in '0123456789ABCDEFGHIJK':
+    e = int(f'82934{x}2', 21) + int(f'2924{x}{x}7', 21) + int(f'67564{x}8', 21)
+    if e % 20 == 0:
+        print(e // 20)
+        break

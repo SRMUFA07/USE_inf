@@ -155,7 +155,25 @@
 
 
 # из пробника
-from fnmatch import fnmatch
-for x in range(2031, 10**10, 2031):
-    if fnmatch(str(x), '21?478*7'):
-        print(x, x//2031)
+# from fnmatch import fnmatch
+# for x in range(2031, 10**10, 2031):
+#     if fnmatch(str(x), '21?478*7'):
+#         print(x, x//2031)
+
+
+
+# 21422
+def f(x):
+    divs = set()
+    for d in range(1, int(x**0.5) + 1):
+        if x % d == 0:
+            if (str(d)[-1] == '7') and d != x and d != 7:
+                divs.add(d)
+            if (str(x//d)[-1] == '7') and x//d != x and x//d != 7:
+                divs.add(x // d)
+    return divs
+
+for x in range(1125000, 1150000):
+    divs = f(x)
+    if len(divs) > 0:
+        print(x, min(divs))

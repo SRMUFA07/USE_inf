@@ -222,45 +222,61 @@
 
 
 # 77)	(Демо-2023)
+# from turtle import *
+# tracer(0)
+# screensize(2000, 2000)
+# scale = 10
+# left(90)
+#
+# for i in range(2):
+#     forward(10*scale)
+#     right(90)
+#     forward(20*scale)
+#     right(90)
+#
+# up()
+# forward(3*scale)
+# right(90)
+# forward(5*scale)
+# left(90)
+# down()
+#
+# for i in range(2):
+#     forward(70*scale)
+#     right(90)
+#     forward(80*scale)
+#     right(90)
+# up()
+#
+# for x in range(100):
+#     for y in range(100):
+#         goto(x*scale, y*scale)
+#         dot('green')
+# done()
+
+
+
+# 21405
 from turtle import *
 tracer(0)
-screensize(2000, 2000)
-scale = 10
+scale = 25
+screensize(1500, 1500)
 left(90)
 
-for i in range(2):
-    forward(10*scale)
-    right(90)
-    forward(20*scale)
-    right(90)
-
-up()
-forward(3*scale)
-right(90)
-forward(5*scale)
-left(90)
 down()
-
-for i in range(2):
-    forward(70*scale)
-    right(90)
-    forward(80*scale)
-    right(90)
+right(30)
+for i in range(3):
+    right(150)
+    forward(6*scale)
+    right(30)
+    forward(12*scale)
 up()
 
-for x in range(100):
-    for y in range(100):
+for x in range(-50, 50):
+    for y in range(-50, 50):
         goto(x*scale, y*scale)
-        dot('green')
+        dot(3, 'red')
 done()
-
-
-
-
-
-
-
-
 
 
 

@@ -1,8 +1,7 @@
 # В1 какой набор букв будет под номером 376?
 # from itertools import *
 # print([i for i in permutations(sorted('модест'))][376])
-
-
+from itertools import count
 
 # В2 под каким номером стоит набор букв подходящий по условию задания?
 # from itertools import *
@@ -159,15 +158,30 @@
 
 
 
-words = []
-for a in sorted('ПАРУС'):
-    for b in sorted('ПАРУС'):
-        for c in sorted('ПАРУС'):
-            for d in sorted('ПАРУС'):
-                for e in sorted('ПАРУС'):
-                    word = a + b + c + d + e
-                    words.append(word)
+# words = []
+# for a in sorted('ПАРУС'):
+#     for b in sorted('ПАРУС'):
+#         for c in sorted('ПАРУС'):
+#             for d in sorted('ПАРУС'):
+#                 for e in sorted('ПАРУС'):
+#                     word = a + b + c + d + e
+#                     words.append(word)
+#
+# for word in words:
+#     if word.count('У') <= 1 and 'АА' not in word:
+#         print(words.index(word) + 1)
 
-for word in words:
-    if word.count('У') <= 1 and 'АА' not in word:
-        print(words.index(word) + 1)
+
+
+# 21407
+count = 0
+for a in 'ДГИАШЭ':
+    for b in 'ДГИАШЭ':
+        for c in 'ДГИАШЭ':
+            for d in 'ДГИАШЭ':
+                for e in 'ДГИАШЭ':
+                    word = a + b + c + d + e
+                    if word[0] == 'И' or word[0] == 'А' or word[0] == 'Э':
+                        if word[-1] == 'Д' or word[-1] == 'Г' or word[-1] == 'Ш':
+                            count += 1
+print(count)

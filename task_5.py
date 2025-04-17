@@ -206,17 +206,33 @@
 
 
 # № 561
-def f(N):
-    res = ''
-    while N > 0:
-        res += str(N % 3)
-        N //= 3
-    return res[::-1]
+# def f(N):
+#     res = ''
+#     while N > 0:
+#         res += str(N % 3)
+#         N //= 3
+#     return res[::-1]
+#
+# for N in range(1, 1000):
+#     N3 = f(N)
+#     N3 = N3 + str(N % 3)
+#     R = int(N3, 3)
+#     if R >= 100:
+#         print(R)
+#         break
 
-for N in range(1, 1000):
-    N3 = f(N)
-    N3 = N3 + str(N % 3)
-    R = int(N3, 3)
-    if R >= 100:
-        print(R)
+
+
+# 21404
+for N in range(1, 500):
+    N_bin = bin(N)[2:]
+
+    if N_bin.count('1') % 2 == 0:
+        N_bin = '10' + N_bin[2:] + '0'
+    else:
+        N_bin = '11' + N_bin[2:] + '1'
+
+    R = int(N_bin, 2)
+    if R > 480:
+        print(N)
         break

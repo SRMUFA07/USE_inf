@@ -430,22 +430,39 @@ from sys import flags
 
 
 # № 15330
-B = list(range(24, 91))
-C = list(range(47, 116))
+# B = list(range(24, 91))
+# C = list(range(47, 116))
+#
+# def f(x, B, C, A):
+#     return (x in C) <= (((x not in A) and (x in B)) <= (x not in C))
+#
+# res = []
+# for A_s in range(1, 200):
+#     for A_e in range(A_s+1, 300):
+#         flag = True
+#         A = list(range(A_s, A_e))
+#         for x in range(1, 500):
+#             if not f(x, B, C, A):
+#                 flag = False
+#                 break
+#         if flag:
+#             res.append(len(A)-1)
+# print(min(res))
 
-def f(x, B, C, A):
-    return (x in C) <= (((x not in A) and (x in B)) <= (x not in C))
+
+
+# 21414
+def f(x, y, A):
+    return (5 < y) or (x > 32) or (x + 2*y < A)
 
 res = []
-for A_s in range(1, 200):
-    for A_e in range(A_s+1, 300):
-        flag = True
-        A = list(range(A_s, A_e))
-        for x in range(1, 500):
-            if not f(x, B, C, A):
+for A in range(1, 500):
+    flag = True
+    for x in range(1, 500):
+        for y in range(1, 500):
+            if not f(x, y, A):
                 flag = False
                 break
-        if flag:
-            res.append(len(A)-1)
+    if flag:
+        res.append(A)
 print(min(res))
-
