@@ -310,21 +310,63 @@
 
 
 # 14653 КЕГЭ
-file = [int(x) for x in open('task_17/17.16_14653.txt')]
+# file = [int(x) for x in open('task_17/17.16_14653.txt')]
+# res = []
+#
+# file_usl = [x for x in file if x % 17 == 0 and x > 0]
+# min_1 = sorted(file_usl)[0]
+# min_2 = sorted(file_usl)[1]
+#
+# max69 = max([x for x in file if abs(x) % 100 == 69])
+#
+# for i in range(len(file) - 3):
+#     if (abs(file[i]) in range(100, 1000)) + (abs(file[i+1]) in range(100, 1000)) + \
+#         (abs(file[i+2]) in range(100, 1000)) + (abs(file[i+3]) in range(100, 1000)) == 2:
+#         if (file[i] % 18 == 0) + (file[i+1] % 18 == 0) + \
+#             (file[i+2] % 18 == 0) + (file[i+3] % 18 == 0) == 1:
+#             if (file[i] + file[i+1] + file[i+2] + file[i+3]) % (min_1 + min_2) == 0:
+#                 if (file[i] * file[i+1] * file[i+2] * file[i+3]) <= max69**2:
+#                     res.append((file[i] + file[i+1] + file[i+2] + file[i+3])**2)
+# print(len(res), min(res))
+
+
+
+# 21416
+file = [int(x) for x in open('task_17/17_21416.txt')]
 res = []
 
-file_usl = [x for x in file if x % 17 == 0 and x > 0]
-min_1 = sorted(file_usl)[0]
-min_2 = sorted(file_usl)[1]
+sum_otric = 0
+for o in range(len(file)):
+    if file[o] < 0:
+        sum_otric += file[o]
 
-max69 = max([x for x in file if abs(x) % 100 == 69])
+sum_troyka = []
+for i in range(len(file) - 2):
+    troyka = [file[i], file[i+1], file[i+2]]
+    if min(troyka) * max(troyka) > sum_otric:
+        res.append(troyka)
 
-for i in range(len(file) - 3):
-    if (abs(file[i]) in range(100, 1000)) + (abs(file[i+1]) in range(100, 1000)) + \
-        (abs(file[i+2]) in range(100, 1000)) + (abs(file[i+3]) in range(100, 1000)) == 2:
-        if (file[i] % 18 == 0) + (file[i+1] % 18 == 0) + \
-            (file[i+2] % 18 == 0) + (file[i+3] % 18 == 0) == 1:
-            if (file[i] + file[i+1] + file[i+2] + file[i+3]) % (min_1 + min_2) == 0:
-                if (file[i] * file[i+1] * file[i+2] * file[i+3]) <= max69**2:
-                    res.append((file[i] + file[i+1] + file[i+2] + file[i+3])**2)
-print(len(res), min(res))
+    sum_troyka.append(sum(troyka))
+
+print(len(res), abs(max(sum_troyka)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
