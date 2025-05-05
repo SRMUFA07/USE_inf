@@ -452,17 +452,99 @@ from sys import flags
 
 
 # 21414
-def f(x, y, A):
-    return (5 < y) or (x > 32) or (x + 2*y < A)
+# def f(x, y, A):
+#     return (5 < y) or (x > 32) or (x + 2*y < A)
+#
+# res = []
+# for A in range(1, 500):
+#     flag = True
+#     for x in range(1, 500):
+#         for y in range(1, 500):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         res.append(A)
+# print(min(res))
+
+
+
+# № 21710
+# B = list(range(36, 76))
+# C = list(range(60, 111))
+#
+# def f(x, A, B, C):
+#     return (x not in A) <= ((x in B) == (x in C))
+#
+# res = []
+# for A_s in range(1, 300):
+#     for A_e in range(A_s+1, 300):
+#         flag = True
+#         A = list(range(A_s, A_e))
+#         for x in range(1, 500):
+#             if not f(x, A, B, C):
+#                 flag = False
+#                 break
+#         if flag:
+#             res.append(len(A)-1)
+# print(min(res))
+
+
+
+# 20961
+# P = list(range(15, 143))
+# Q = list(range(38, 168))
+#
+# def f(x, A, P, Q):
+#     return not((x in Q) <= (((x not in A) and (x in P)) <= (x not in Q)))
+#
+# res = []
+# for A_s in range(1, 300):
+#     for A_e in range(A_s+1, 300):
+#         flag = True
+#         A = list(range(A_s, A_e))
+#         for x in range(1, 500):
+#             if f(x, A, P, Q):
+#                 flag = False
+#                 break
+#         if flag:
+#             res.append(len(A)-1)
+# print(min(res))
+
+
+
+# 6268
+B = list(range(23, 38))
+C = list(range(41, 74))
+
+def f(x, A, B, C):
+    return not(((x not in B) <= (x in C)) <= (x in A))
 
 res = []
-for A in range(1, 500):
-    flag = True
-    for x in range(1, 500):
-        for y in range(1, 500):
-            if not f(x, y, A):
+for A_s in range(1, 300):
+    for A_e in range(A_s+1, 300):
+        flag = True
+        A = list(range(A_s, A_e))
+        for x in range(1, 500):
+            if f(x, A, B, C):
                 flag = False
                 break
-    if flag:
-        res.append(A)
+        if flag:
+            res.append(len(A)-1)
 print(min(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
