@@ -224,15 +224,126 @@
 
 
 # 21404
+# for N in range(1, 500):
+#     N_bin = bin(N)[2:]
+#
+#     if N_bin.count('1') % 2 == 0:
+#         N_bin = '10' + N_bin[2:] + '0'
+#     else:
+#         N_bin = '11' + N_bin[2:] + '1'
+#
+#     R = int(N_bin, 2)
+#     if R > 480:
+#         print(N)
+#         break
+
+
+
+# 21891
+# def sum_d(N_bin):
+#     sum_N_bin = 0
+#     for i in N_bin:
+#         sum_N_bin += int(i)
+#     return sum_N_bin
+#
+# for N in range(1, 500):
+#     N_bin = bin(N)[2:]
+#
+#     sum_d_N_bin = sum_d(N_bin)
+#     N_bin += str(sum_d_N_bin % 2)
+#
+#     sum_d_N_bin = sum_d(N_bin)
+#     N_bin += str(sum_d_N_bin % 2)
+#
+#     R = int(N_bin, 2)
+#     if R > 253:
+#         print(N)
+#         break
+
+
+
+# 21700
+# def f(n):
+#     res = ''
+#     while n > 0:
+#         res += str(n % 3)
+#         n //= 3
+#     return res[::-1]
+#
+# res = []
+# for N in range(2, 500):
+#     n3 = f(N)
+#
+#     if N % 3 == 0:
+#         n3 += n3[-3:]
+#     else:
+#         n3 += f((N % 3) * 3)
+#
+#     R = int(n3, 3)
+#     if R <= 150:
+#         res.append(N)
+# print(max(res))
+
+
+
+# 17859
+# res = []
+# for N in range(1, 500):
+#     N2 = bin(N)[2:]
+#
+#     if N % 2 == 0:
+#         N2 = '10' + N2
+#     else:
+#         N2 = '1' + N2 + '01'
+#
+#     R = int(N2, 2)
+#     if N <= 12:
+#         res.append(R)
+# print(max(res))
+
+
+
+# 17668
+# res = []
+# for N in range(1, 500):
+#     N2 = bin(N)[2:]
+#
+#     if N2.count('1') % 2 == 0:
+#         N2 = '10' + N2[2:] + '0'
+#     else:
+#         N2 = '11' + N2[2:] + '1'
+#
+#     R = int(N2, 2)
+#     if N > 27:
+#         res.append(R)
+# print(min(res))
+
+
+
+# 16371
+res = []
 for N in range(1, 500):
-    N_bin = bin(N)[2:]
+    N2 = bin(N)[2:]
 
-    if N_bin.count('1') % 2 == 0:
-        N_bin = '10' + N_bin[2:] + '0'
+    if N % 3 == 0:
+        N2 += N2[-2:]
     else:
-        N_bin = '11' + N_bin[2:] + '1'
+        N2 = N2 + bin((N % 3) * 3)[2:]
 
-    R = int(N_bin, 2)
-    if R > 480:
-        print(N)
-        break
+    R = int(N2, 2)
+    if R >= 195:
+        res.append(R)
+print(min(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
