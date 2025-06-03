@@ -85,10 +85,78 @@
 
 
 # 21401
-print('x y z w')
-for x in range(2):
-    for y in range(2):
-        for z in range(2):
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if (x and (z <= w) and not y) == 1:
+#                     print(x, y, z, w) # xwzy
+
+
+
+# 21888
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if ((x and not y) or (y == z) or w) == 0:
+#                     print(x, y, z, w) # xwzy
+
+
+
+# 21697
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if (not(x <= y) or (z == w) or z) == 0:
+#                     print(x, y, z, w) # zyxw
+
+
+
+# 21401
+# print('x w z y')
+# for x in range(2):
+#     for w in range(2):
+#         for z in range(2):
+#             for y in range(2):
+#                 if (x and (z <= w) and not(y)) == 1:
+#                     print(x, w, z, y) # xwzy
+
+
+
+# 20894
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if (not(x <= y) or (z <= w) or not(z)) == 0:
+#                     print(x, y, z, w) # xyzw
+
+
+
+# 20802
+print('z x y w')
+for z in range(2):
+    for x in range(2):
+        for y in range(2):
             for w in range(2):
-                if (x and (z <= w) and not y) == 1:
-                    print(x, y, z, w) # xwzy
+                if ((w <= (not(z <= x))) or y) == 0:
+                    print(z, x, y, w) # zxyw
+
+
+
+
+
+
+
+
+
+
+
+
+
