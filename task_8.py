@@ -1,7 +1,8 @@
 # В1 какой набор букв будет под номером 376?
 # from itertools import *
 # print([i for i in permutations(sorted('модест'))][376])
-from itertools import count
+
+
 
 # В2 под каким номером стоит набор букв подходящий по условию задания?
 # from itertools import *
@@ -174,14 +175,61 @@ from itertools import count
 
 
 # 21407
+# count = 0
+# for a in 'ДГИАШЭ':
+#     for b in 'ДГИАШЭ':
+#         for c in 'ДГИАШЭ':
+#             for d in 'ДГИАШЭ':
+#                 for e in 'ДГИАШЭ':
+#                     word = a + b + c + d + e
+#                     if word[0] == 'И' or word[0] == 'А' or word[0] == 'Э':
+#                         if word[-1] == 'Д' or word[-1] == 'Г' or word[-1] == 'Ш':
+#                             count += 1
+# print(count)
+
+
+
+# 21703
+# count = 0
+# for a in sorted('ПОБЕДА'):
+#     for b in sorted('ПОБЕДА'):
+#         for c in sorted('ПОБЕДА'):
+#             for d in sorted('ПОБЕДА'):
+#                 for e in sorted('ПОБЕДА'):
+#                     for f in sorted('ПОБЕДА'):
+#                         count += 1
+#                         word = a + b + c + d + e + f
+#                         if count % 2 ==0 and word[0] == 'О' and len(set(word)) == 6:
+#                             print(count, word)
+
+
+
+# 21894
+# count = 0
+# for a in '0123456789':
+#     for b in '0123456789':
+#         for c in '0123456789':
+#             for d in '0123456789':
+#                 word = a + b + c + d
+#                 if len(set(word)) == 4:
+#                     word = word.replace('1', '0', 1).replace('3', '0').replace('5', '0').replace('7', '0').replace('9', '0')
+#                     word = word.replace('0', '1', 1).replace('2', '1').replace('4', '1').replace('6', '1').replace('8', '0')
+#                     if '00' not in word and '11' not in word:
+#                         count += 1
+# print(count)
+
+
+
+# 20898
 count = 0
-for a in 'ДГИАШЭ':
-    for b in 'ДГИАШЭ':
-        for c in 'ДГИАШЭ':
-            for d in 'ДГИАШЭ':
-                for e in 'ДГИАШЭ':
+for a in '012345678':
+    for b in '012345678':
+        for c in '012345678':
+            for d in '012345678':
+                for e in '012345678':
                     word = a + b + c + d + e
-                    if word[0] == 'И' or word[0] == 'А' or word[0] == 'Э':
-                        if word[-1] == 'Д' or word[-1] == 'Г' or word[-1] == 'Ш':
+                    if word[0] != '0' and word.count('0') == 1:
+                        word = word.replace('3' , '1').replace('5' , '1').replace('7' , '1')
+                        if '10' not in word and '01' not in word:
                             count += 1
 print(count)
