@@ -5,6 +5,7 @@
 #     if n > 2:
 #         return F(n - 1) + 2 * F(n - 2)
 # print(F(5))
+import sys
 from functools import lru_cache
 
 
@@ -87,7 +88,7 @@ from functools import lru_cache
 
 # №9
 # import sys
-# sys.setrecursionlimit(10**6)
+# sys.setrecursionlimit(2024)
 # def F(n):
 #     if n < 7:
 #         return 7
@@ -107,6 +108,7 @@ from functools import lru_cache
 # print(F(6))
 
 
+
 # №11
 # def F(n):
 #     if n==1: 
@@ -116,7 +118,6 @@ from functools import lru_cache
 #     if n>2:
 #         return 3 * F(n-1) - F(n-2)
 # print(F(8))
-
 
 
 
@@ -157,13 +158,14 @@ from functools import lru_cache
 # F(n)=n+F(n−1), если n≥11.
 # Чему равно значение выражения F(2024)−F(2021)?
 # import sys
-# sys.setrecursionlimit(10**5)
+# sys.setrecursionlimit(2024)
 # def F(n):
 #     if n < 11:
 #         return n
 #     if n >= 11:
 #         return n + F(n-1)
 # print(F(2024) - F(2021))
+
 
 
 # 224)	(Демо-2025) 
@@ -304,12 +306,123 @@ from functools import lru_cache
 
 
 
-# 21415
-import sys
-sys.setrecursionlimit(10**5)
+# 21415.1
+# import sys
+# sys.setrecursionlimit(10**5)
+# def F(n):
+#     if n <= 5:
+#         return 1
+#     if n > 5:
+#         return n + F(n-2)
+# print(F(2126) - F(2122))
+
+# 21415.2
+# from functools import lru_cache
+# @lru_cache(None)
+# def F(n):
+#     if n <= 5:
+#         return 1
+#     if n > 5:
+#         return n + F(n - 2)
+# for n in range(1, 2126): F(n)
+# print(F(2126) - F(2122))
+
+
+
+# 21902
+# def F(n):
+#     if n >= 2025:
+#         return n
+#     if n < 2025:
+#         return n * 2 + F(n + 2)
+# print(F(82) - F(81))
+
+
+
+# 21711
+# from functools import lru_cache
+# @lru_cache(None)
+# def F(n):
+#     if n < 20:
+#         return n
+#     if n >= 20:
+#         return (n - 6) * F(n - 7)
+# for n in range(1, 47872): F(n)
+# print((F(47872) - 290 * F(47865)) // F(47858))
+
+
+
+# 16327
+# from functools import lru_cache
+# @lru_cache(None)
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return n * F(n - 1)
+# for n in range(1, 2024): F(n)
+# print((F(2024) - F(2023)) // F(2022))
+
+
+
+# 16263
+# from functools import lru_cache
+# @lru_cache(None)
+# def F(n):
+#     if n < 7:
+#         return 7
+#     if n >= 7 and n % 3 != 0:
+#         return 5 - F(n - 1)
+#     if n >= 7 and n % 3 == 0:
+#         return 3 + F(n - 1)
+# for n in range(1, 3015): F(n)
+# print(F(3015))
+
+
+
+# 14339
+from functools import lru_cache
+@lru_cache(None)
 def F(n):
-    if n <= 5:
-        return 1
-    if n > 5:
-        return n + F(n-2)
-print(F(2126) - F(2122))
+    if n < 11:
+        return n
+    if n >= 11 and n % 2 == 0:
+        return 2 * n - 3 + F(n - 2)
+    if n >= 11 and n % 2 != 0:
+        return 3 * n - 4 + F(n - 3)
+for n in range(1, 5500): F(n)
+print(F(5500) - F(5497))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

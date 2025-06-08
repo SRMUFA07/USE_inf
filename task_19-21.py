@@ -189,12 +189,100 @@
 
 
 # 21418
-def f(s, m):
-    if s <= 87: return m % 2 == 0
-    if m == 0: return 0
-    h = [f(s-2, m-1), f(s//2, m-1)]
-    return any(h) if m % 2 != 0 else all(h)
+# def f(s, m):
+#     if s <= 87: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s-2, m-1), f(s//2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+#
+# print('19', [s for s in range(89, 1000) if not f(s, 1) and f(s, 2)])
+# print('20', [s for s in range(89, 1000) if not f(s, 1) and f(s, 3)])
+# print('21', [s for s in range(89, 1000) if not f(s, 2) and f(s, 4)])
 
-print('19', [s for s in range(89, 1000) if not f(s, 1) and f(s, 2)])
-print('20', [s for s in range(89, 1000) if not f(s, 1) and f(s, 3)])
-print('21', [s for s in range(89, 1000) if not f(s, 2) and f(s, 4)])
+
+
+# 21905
+# def f(s, m):
+#     if s >= 67: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+#
+# print('19', [s for s in range(1, 66) if not f(s, 1) and f(s, 2)])
+# print('20', [s for s in range(1, 66) if not f(s, 1) and f(s, 3)])
+# print('21', [s for s in range(1, 66) if not f(s, 2) and f(s, 4)])
+
+
+
+# 20907
+# def f(a, b, m):
+#     if a+b >= 81: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(a+1, b, m-1), f(a*2, b, m-1), f(a, b+1, m-1), f(a, b*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+# print('19', [s for s in range(1, 74) if f(7, s, 2)]) # 19
+# print('20', [s for s in range(1, 74) if not f(7, s, 1) and f(7, s, 3)])
+# print('21', [s for s in range(1, 74) if not f(7, s, 2) and f(7, s, 4)])
+
+
+
+# 15336
+# def f(a, b, m):
+#     if a+b >= 123: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(a+1, b, m-1), f(a*2, b, m-1), f(a, b+1, m-1), f(a, b*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+# print('19', [s for s in range(1, 110) if f(13, s, 2)])
+# print('20', [s for s in range(1, 110) if not f(13, s, 1) and f(13, s, 3)])
+# print('21', [s for s in range(1, 110) if not f(13, s, 2) and f(13, s, 4)])
+# # 19 - 28
+# # 20 - 48 54
+# # 21 = 47
+
+
+
+# 19251
+def f(s, m):
+    if s >= 132: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+3, m-1), f(s+6, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+print('19', [s for s in range(1, 132) if not f(s, 1) and f(s, 2)])
+print('20', [s for s in range(1, 132) if not f(s, 1) and f(s, 3)])
+print('19', [s for s in range(1, 132) if not f(s, 2) and f(s, 4)])
+# 41
+# 14 35
+# 32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
