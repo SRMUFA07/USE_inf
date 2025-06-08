@@ -155,6 +155,78 @@
 
 
 # 21412
+# from ipaddress import *
+# net = ip_network('143.168.72.213/255.255.255.240', 0)
+# print(net[-2])
+
+
+
+# 21899
+# from ipaddress import *
+# net = ip_network('98.81.154.195/255.252.0.0', 0)
+# print(net[-2]) # 9883255254
+
+
+
+# 21708
+# from ipaddress import *
+# net = ip_network('11.92.135.56/255.224.0.0', 0)
+# print(net[-2]) # 1195255254
+
+
+
+# 20902
+# from ipaddress import *
+# net = ip_network('172.16.80.0/255.255.248.0', 0)
+# count = 0
+# for ip in net:
+#     ip_bin = bin(int(ip))[2:]
+#     if ip_bin.count('0') % 2 != 0:
+#         count += 1
+# print(count)
+
+
+
+# 20807
+# from ipaddress import *
+# net = ip_network('172.16.192.0/255.255.192.0', 0)
+# count = 0
+# for ip in net:
+#     ip_bin = bin(int(ip))[2:]
+#     if ip_bin.count('1') % 5 != 0:
+#         count += 1
+# print(count)
+
+
+
+# 19245
 from ipaddress import *
-net = ip_network('143.168.72.213/255.255.255.240', 0)
-print(net[-2])
+net = ip_network('218.194.82.148/255.255.255.192', 0)
+print(net[-2]) # 21819482190
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

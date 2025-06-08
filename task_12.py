@@ -408,25 +408,127 @@
 
 
 # 21411
-def sum_d(num):
-    res = 0
-    for d in num:
-        res += d
-    return res
+# def sum_d(num):
+#     res = 0
+#     for d in num:
+#         res += d
+#     return res
+#
+# for n in range(4, 10000):
+#     num = '3' + '1' * n
+#     while '31' in num or '211' in num or '1111' in num:
+#         if '31' in num:
+#             num = num.replace('31', '1', 1)
+#         if '211' in num:
+#             num = num.replace('211', '13', 1)
+#         if '1111' in num:
+#             num = num.replace('1111', '2', 1)
+#
+#     sum_d = 0
+#     for d in num:
+#         sum_d += int(d)
+#     if sum_d == 15:
+#         print(n)
+#         break
 
-for n in range(4, 10000):
-    num = '3' + '1' * n
-    while '31' in num or '211' in num or '1111' in num:
-        if '31' in num:
-            num = num.replace('31', '1', 1)
-        if '211' in num:
-            num = num.replace('211', '13', 1)
-        if '1111' in num:
-            num = num.replace('1111', '2', 1)
 
-    sum_d = 0
-    for d in num:
-        sum_d += int(d)
-    if sum_d == 15:
-        print(n)
-        break
+
+# 21898
+# def sum_d(s):
+#     res = 0
+#     for i in s:
+#         res += int(i)
+#     return res
+#
+# for n in range(3,  10000):
+#     s = '1' + '9' * n
+#     while '19' in s or '399' in s or '999' in s:
+#         if '19' in s:
+#             s = s.replace('19', '9', 1)
+#         if '399' in s:
+#             s = s.replace('399', '91', 1)
+#         if '999' in s:
+#             s = s.replace('999', '3', 1)
+#
+#     if sum_d(s) == 33:
+#         print(n)
+#         break
+
+
+
+# 21707
+# def sum_d(s):
+#     res = 0
+#     for i in s:
+#         res += int(i)
+#     return res
+#
+# for n in range(3, 10000):
+#     s = '4' + '2' * n
+#     while '42' in s or '8222' in s or '2222' in s:
+#         if '42' in s:
+#             s = s.replace('42', '2', 1)
+#         if '8222' in s:
+#             s = s.replace('8222', '24', 1)
+#         if '2222' in s:
+#             s = s.replace('2222', '8', 1)
+#     if sum_d(s) == 110:
+#         print(n)
+#         break
+
+
+
+# 20901
+# s = '1' + '0' * 90
+# while '1' in s:
+#     if '10' in s:
+#         s = s.replace('10', '0001', 1)
+#     else:
+#         s = s.replace('1', '000', 1)
+# print(s.count('0'))
+
+
+
+# 20806
+# s = '1' * 81
+# while '111' in s or '88888' in s:
+#     if '111' in s:
+#         s = s.replace('111', '88', 1)
+#     else:
+#         s = s.replace('88888', '8', 1)
+# print(s)
+
+
+
+# 19244
+# def sum_d(s):
+#     res = 0
+#     for i in s:
+#         res += int(i)
+#     return res
+#
+# for n in range(3, 10000):
+#     s = '1' + '2' * n
+#     while '12' in s or '322' in s or '222' in s:
+#         if '12' in s:
+#             s = s.replace('12', '2', 1)
+#         if '322' in s:
+#             s = s.replace('322', '21', 1)
+#         if '222' in s:
+#             s = s.replace('222', '3', 1)
+#     if sum_d(s) == 15:
+#         print(n)
+#         break
+
+
+
+
+
+
+
+
+
+
+
+
+

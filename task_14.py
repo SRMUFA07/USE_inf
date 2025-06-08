@@ -5,7 +5,8 @@
 #         return digits[num]
 #     return seven(num // 7) + digits[num % 7]
 # print(seven(6 * 343**5 + 5 * 49**7 - 50).count('6'))
-from itertools import count
+
+
 
 # №2
 # def three(num):
@@ -411,20 +412,108 @@ from itertools import count
 
 
 
-# счетчик каких-то цифр в какой-то системе счисления
-# count = 0
-# n = 111
-# while n > 0:
-#     if n % 3 == 0:
-#         count += 1
-#     n //= 3
-# print('нулей:', count)
+        # счетчик каких-то цифр в какой-то системе счисления
+        # count = 0
+        # n = 111
+        # while n > 0:
+        #     if n % 3 == 0:
+        #         count += 1
+        #     n //= 3
+        # print('нулей:', count)
 
 
 
 # 21413
-for x in '0123456789ABCDEFGHIJK':
-    e = int(f'82934{x}2', 21) + int(f'2924{x}{x}7', 21) + int(f'67564{x}8', 21)
-    if e % 20 == 0:
-        print(e // 20)
-        break
+# for x in '0123456789ABCDEFGHIJK':
+#     e = int(f'82934{x}2', 21) + int(f'2924{x}{x}7', 21) + int(f'67564{x}8', 21)
+#     if e % 20 == 0:
+#         print(e // 20)
+#         break
+
+
+
+# 21900
+# res = []
+# for x in range(1, 2301):
+#     e = 7**350 + 7**150 - x
+#     count = 0
+#     while e > 0:
+#         if e % 7 == 0:
+#             count += 1
+#         e //= 7
+#     if count == 200:
+#         res.append(x)
+# print(max(res))
+
+
+
+# 20808
+# count_0 = []
+# for x in range(1, 2031):
+#     e = 7**170 + 7**100 - x
+#     count = 0
+#     while e > 0:
+#         if e % 7 == 0:
+#             count += 1
+#         e //= 7
+#     count_0.append(count)
+# print(max(count_0))
+#
+# res = []
+# for x in range(1, 2031):
+#     e = 7**170 + 7**100 - x
+#     count = 0
+#     while e > 0:
+#         if e % 7 == 0:
+#             count += 1
+#         e //= 7
+#     if count == 73:
+#         res.append(x)
+# print(max(res))
+
+
+
+# 17869
+# count = 0
+# e = 3 * 3125**8 + 2 * 625**7 - 4 * 625**6 + 3 * 125**5 - 2 * 25**4 - 2025
+# while e > 0:
+#     if e % 25 == 0:
+#         count += 1
+#     e //= 25
+# print(count)
+
+
+
+# 17868
+# res = []
+# for x in '0123456789ABCDEFGHI':
+#     e = int(f'98897{x}21', 19) + int(f'2{x}923', 19)
+#     if e % 18 == 0:
+#         res.append(e//18)
+# print(max(res))
+
+
+
+# 12468
+res =[]
+for x in '0123456789ABCDEFGHI':
+    e = int(f'78{x}79643', 19) + int(f'25{x}43', 19) + int(f'63{x}5', 19)
+    if e % 18 == 0:
+        res.append(e//18)
+print(min(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

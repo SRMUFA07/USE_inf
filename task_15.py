@@ -13,16 +13,16 @@ from sys import flags
 # def f(x, A):
 #     # (A < 50) ∧ (¬ДЕЛ(x, А) → (ДЕЛ(x, 10) → ¬ДЕЛ(x, 18)))
 #     return (A < 50) and ((x % A != 0) <= ((x % 10 == 0) <= (x % 18 != 0)))
-    
+#
 #     # l1 = A < 50
 #     # l2 = x % A != 0
 #     # l3 = x % 10 == 0
 #     # l4 = x % 18 != 0
 #     # return l1 and (l2 <= (l3 <= l4))
-
-# for A in range (1, 300): # диапазон можно менять 
+#
+# for A in range (1, 300): # диапазон можно менять
 #     flag = True
-#     for x in range (1, 300): # диапазон можно менять 
+#     for x in range (1, 300): # диапазон можно менять
 #         if not f(x, A):
 #             flag = False
 #             break
