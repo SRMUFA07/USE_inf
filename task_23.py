@@ -363,14 +363,99 @@
 
 
 # 21420 Досрочная волна 2024
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x > y or x == 35:
+#         return 0
+#     if x < y:
+#         return F(x+1, y) + F(x+2, y) + F(x*2, y)
+# print(F(7, 13) * F(13, 15) * F(15, 51))
+
+
+
+
+# 21907
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x > y or x == 8:
+#         return 0
+#     if x < y:
+#         return F(x+1, y) + F(x+2, y) + F(x*2, y)
+# print(F(3, 14) * F(14, 18))
+
+
+
+# 21716
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x > y or x == 56:
+#         return 0
+#     if x < y:
+#         return F(x+3, y) + F(x+7, y) + F(x*3, y)
+# print(F(12,40) * F(40, 72) * F(72, 89))
+
+
+
+# 19253
+# def F(x, y):
+#     if x == y:
+#         return 1
+#     if x < y or x == 24:
+#         return 0
+#     if x > y:
+#         return F(x-1, y) + F(x-6, y) + F(x//2, y)
+# print(F(34, 29) * F(29, 19) * F(19, 6))
+
+
+
+# 17684
 def F(x, y):
     if x == y:
         return 1
-    if x > y or x == 35:
-        return 0
     if x < y:
-        return F(x+1, y) + F(x+2, y) + F(x*2, y)
-print(F(7, 13) * F(13, 15) * F(15, 51))
+        return 0
+    if x > y:
+        return F(x-2, y) + F(x//2, y)
+print(F(38, 10) * F(10, 2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
