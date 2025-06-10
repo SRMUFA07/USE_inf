@@ -332,23 +332,115 @@
 
 
 # 21416
-file = [int(x) for x in open('task_17/17_21416.txt')]
-res = []
+# file = [int(x) for x in open('task_17/17_21416.txt')]
+# res = []
+#
+# sum_otric = 0
+# for o in range(len(file)):
+#     if file[o] < 0:
+#         sum_otric += file[o]
+#
+# sum_troyka = []
+# for i in range(len(file) - 2):
+#     troyka = [file[i], file[i+1], file[i+2]]
+#     if min(troyka) * max(troyka) > sum_otric:
+#         res.append(troyka)
+#
+#     sum_troyka.append(sum(troyka))
+#
+# print(len(res), abs(max(sum_troyka)))
 
-sum_otric = 0
-for o in range(len(file)):
-    if file[o] < 0:
-        sum_otric += file[o]
 
-sum_troyka = []
-for i in range(len(file) - 2):
-    troyka = [file[i], file[i+1], file[i+2]]
-    if min(troyka) * max(troyka) > sum_otric:
-        res.append(troyka)
 
-    sum_troyka.append(sum(troyka))
+# 21903
+# file = [int(x) for x in open('task_17/17_21903.txt')]
+# min_13 = min(x for x in file if str(abs(x))[-2:] == '15' and len(str(abs(x))) == 3)
+#
+# count = 0
+# min_max_troyka = []
+# for i in range(len(file) - 2):
+#     troyka = [file[i], file[i+1], file[i+2]]
+#     if all(troyka) > 0 or all(troyka) < 0:
+#         if (int(max(troyka)) * int(min(troyka))) > int(min_13)**2:
+#             count += 1
+#             min_max_troyka.append(int(max(troyka)) * int(min(troyka)))
+# print(count, min(min_max_troyka))
 
-print(len(res), abs(max(sum_troyka)))
+
+
+# 21712
+# file = [int(x) for x in open('task_17/17_21712.txt')]
+# min_6 = min(x for x in file if x > 0 and len(str(x)) == 4 and str(x)[-1] == '6')
+#
+# count = 0
+# sum_troyek = []
+# for i in range(len(file) - 2):
+#     troyka = [file[i], file[i+1], file[i+2]]
+#
+#     troyka_6 = [x for x in troyka if len(str(abs(x))) == 4 and str(x)[-1] == '6']
+#     if len(troyka_6) == 1:
+#         if sum(troyka) <= min_6:
+#             count += 1
+#             sum_troyek.append(sum(troyka))
+# print(count, max(sum_troyek))
+
+
+
+# 21595
+# file = [int(x) for x in open('task_17/17_21595.txt')]
+# abs_3 = [x for x in file if len(str(abs(x))) == 4 and str(abs(x))[-1] == '3']
+#
+# count = 0
+# sum_troyek = []
+# for i in range(len(file) - 2):
+#     troyka = [file[i], file[i+1], file[i+2]]
+#     if (int(sorted(troyka)[2]) + int(sorted(troyka)[1])) > len(abs_3)**2:
+#         count += 1
+#         sum_troyek.append(sum(troyka))
+# print(count, abs(max(sum_troyek)))
+
+
+
+# 17680
+# file = [int(x) for x in open('task_17/17_17680.txt')]
+# min_41 = min(x for x in file if x > 0 and x % 41 == 0)
+#
+# count = 0
+# sum_dvoek = []
+# for i in range(len(file) - 1):
+#     dvoyka = [file[i], file[i+1]]
+#     if dvoyka[0] != dvoyka[1]:
+#         if abs(int(dvoyka[0]) - int(dvoyka[1])) % min_41 == 0:
+#             count += 1
+#             sum_dvoek.append(sum(dvoyka))
+# print(count, max(sum_dvoek))
+
+
+
+# 15333
+file = [int(x) for x in open('task_17/17_15333.txt')]
+max_19 = max(x for x in file if x % 19 == 0)
+
+count = 0
+sum_dvoek = []
+for i in range(len(file) - 1):
+    dvoyka = [file[i], file[i+1]]
+    if dvoyka[0] > max_19 or dvoyka[1] > max_19:
+        count += 1
+        sum_dvoek.append(sum(dvoyka))
+print(count, max(sum_dvoek))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

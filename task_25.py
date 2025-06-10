@@ -163,17 +163,175 @@
 
 
 # 21422
-def f(x):
-    divs = set()
-    for d in range(1, int(x**0.5) + 1):
-        if x % d == 0:
-            if (str(d)[-1] == '7') and d != x and d != 7:
-                divs.add(d)
-            if (str(x//d)[-1] == '7') and x//d != x and x//d != 7:
-                divs.add(x // d)
-    return divs
+# def f(x):
+#     divs = set()
+#     for d in range(1, int(x**0.5) + 1):
+#         if x % d == 0:
+#             if (str(d)[-1] == '7') and d != x and d != 7:
+#                 divs.add(d)
+#             if (str(x//d)[-1] == '7') and x//d != x and x//d != 7:
+#                 divs.add(x // d)
+#     return divs
+#
+# for x in range(1125000, 1150000):
+#     divs = f(x)
+#     if len(divs) > 0:
+#         print(x, min(divs))
 
-for x in range(1125000, 1150000):
-    divs = f(x)
-    if len(divs) > 0:
-        print(x, min(divs))
+
+
+# 21909
+# def f(x):
+#     divs = set()
+#     for d in range(1, int(x**0.5) + 1):
+#         if x % d == 0:
+#             divs.add(d)
+#             divs.add(x // d)
+#     return sorted(divs)
+#
+# for x in range(500_001, 500_500):
+#     divs = f(x)
+#     if str(sum(divs))[-1] == '6':
+#         print(x, sum(divs))
+
+
+
+
+# 21718
+# from fnmatch import *
+# for x in range(7993, 10**10, 7993):
+#     if fnmatch(str(x), '4*4736*1'):
+#         print(x, x//7993)
+
+
+
+# 20814
+# def f(x):
+#     divs = set()
+#     for d in range(2, int(x**0.5) + 1):
+#         if x % d == 0:
+#             divs.add(d)
+#             divs.add(x // d)
+#     return sorted(divs)
+#
+# for x in range(500_001, 500_100):
+#     divs = f(x)
+#     R = sum(divs)
+#     if str(R)[-1] == '9':
+#         print(x, R)
+
+
+
+# 17686
+# def f(x):
+#     divs = set()
+#     for d in range(1, int(x**0.5) + 1):
+#         if x % d == 0:
+#             if str(d)[-1] == '7' and d != x and d != 7:
+#                 divs.add(d)
+#             if str(x // d)[-1] == '7' and (x // d) != x and (x // d) != 7:
+#                 divs.add(x // d)
+#     return sorted(divs)
+#
+# for x in range(700_001, 700_100):
+#     divs = f(x)
+#     if len(divs) > 0:
+#         print(x, min(divs))
+
+
+
+# 7095
+# from fnmatch import *
+# for x in range(21, 10**8, 21):
+#     if fnmatch(str(x), '1234*54') and x % 21 == 0:
+#         print(x, x // 21)
+
+
+
+# 19778
+# def p(d):
+#     if d <= 1: return False # ни 1, ни числа < 1 - не простые
+#     if d == 2: return True # число 2 - простое
+#     if d % 2 == 0: return False # все четные числа кроме 2 - не простые
+#     for i in range(3, int(d**0.5) + 1):
+#         if d % i == 0: return False # если у d есть делитель отличный от 1 и от d - не простое
+#     return True
+#
+# def f(x):
+#     divs = set()
+#     for d in range(2, int(x**0.5) + 1):
+#         if x % d == 0:
+#             if p(d):
+#                 divs.add(d)
+#             if p(x//d):
+#                 divs.add(x // d)
+#     return sorted(divs)
+#
+# for x in range(9_500_001, 9_510_000):
+#     divs = f(x)
+#     if len(divs) > 0:
+#         F = sum(divs) // len(divs)
+#     if len(divs) == 0:
+#         F = 0
+#     if F != 0 and F % 813 == 0:
+#         print(x, F)
+
+
+
+# 17536
+# def f(x):
+#     divs = set()
+#     for d in range(2, int(x**0.5) + 1):
+#         if x % d == 0:
+#             if d != x:
+#                 divs.add(d)
+#             if (x//d) != x:
+#                 divs.add(x//d)
+#     return sorted(divs)
+#
+# for x in range(800_000, 801_000):
+#     divs = f(x)
+#     if len(divs) > 0: M = max(divs) + min(divs)
+#     else: M = 0
+#     if str(M)[-1] == '4':
+#         print(x, M)
+
+
+
+# 18938
+from fnmatch import *
+for x in range(2025, 10**10 + 1, 2025):
+    if fnmatch(str(x), '21?5846*?') and x % 2025 == 0:
+        print(x, x//2025)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
