@@ -321,21 +321,49 @@
 
 
 # 16371
+# res = []
+# for N in range(1, 500):
+#     N2 = bin(N)[2:]
+#
+#     if N % 3 == 0:
+#         N2 += N2[-2:]
+#     else:
+#         N2 = N2 + bin((N % 3) * 3)[2:]
+#
+#     R = int(N2, 2)
+#     if R >= 195:
+#         res.append(R)
+# print(min(res))
+
+
+
+# 19237
+def to3(n):
+    res = ''
+    while n>0:
+        res += str(n%3)
+        n //= 3
+    return res[::-1]
+
+def sum_d(n):
+    res = 0
+    for d in str(n):
+        res += int(d)
+    return res
+
 res = []
-for N in range(1, 500):
-    N2 = bin(N)[2:]
+for N in range(1, 1000):
+    N3 = to3(N)
 
     if N % 3 == 0:
-        N2 += N2[-2:]
-    else:
-        N2 = N2 + bin((N % 3) * 3)[2:]
+        N3 = N3 + N3[-2:]
+    if N % 3 != 0:
+        N3 = N3 + to3(sum_d(N3))
 
-    R = int(N2, 2)
-    if R >= 195:
+    R = int(N3, 3)
+    if R % 2 == 0 and R > 220:
         res.append(R)
 print(min(res))
-
-
 
 
 

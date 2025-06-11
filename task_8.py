@@ -221,15 +221,61 @@
 
 
 # 20898
-count = 0
-for a in '012345678':
-    for b in '012345678':
-        for c in '012345678':
-            for d in '012345678':
-                for e in '012345678':
-                    word = a + b + c + d + e
-                    if word[0] != '0' and word.count('0') == 1:
-                        word = word.replace('3' , '1').replace('5' , '1').replace('7' , '1')
-                        if '10' not in word and '01' not in word:
-                            count += 1
-print(count)
+# count = 0
+# for a in '012345678':
+#     for b in '012345678':
+#         for c in '012345678':
+#             for d in '012345678':
+#                 for e in '012345678':
+#                     word = a + b + c + d + e
+#                     if word[0] != '0' and word.count('0') == 1:
+#                         word = word.replace('3' , '1').replace('5' , '1').replace('7' , '1')
+#                         if '10' not in word and '01' not in word:
+#                             count += 1
+# print(count)
+
+
+
+# 19240
+k = 0
+res = []
+for a in sorted('январь'):
+    for b in sorted('январь'):
+        for c in sorted('январь'):
+            for d in sorted('январь'):
+                for e in sorted('январь'):
+                    k += 1
+                    word = a+b+c+d+e
+                    if word[0] != 'я' and word.count('ь') <= 1 and 'яя' not in word:
+                        res.append(k)
+print(max(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
